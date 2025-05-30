@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeyn AI</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <div id="logo-container" aria-hidden="true">
+                <!-- Logo SVG will be injected here by JS -->
+            </div>
+            <h1>Zeyn AI</h1>
+            <div id="header-buttons">
+                <button id="device-mode-toggle-btn" aria-label="Switch to mobile view">
+                    <!-- Icon will be populated by JS -->
+                </button>
+                <button id="export-chat-btn" aria-label="Export chat history">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                </button>
+                <button id="clear-chat-btn" aria-label="Clear chat history">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                </button>
+                <button id="theme-toggle-btn" aria-label="Switch to light theme">
+                    <!-- Icon will be populated by JS -->
+                </button>
+            </div>
+        </header>
+        <main id="chat-area">
+            <div id="message-list" role="log" aria-live="polite" aria-atomic="false">
+                <!-- Messages will be appended here -->
+            </div>
+            <div id="example-prompts-container" aria-label="Example prompts">
+                <!-- Example prompts will be injected here -->
+            </div>
+        </main>
+        <footer>
+            <div id="input-area">
+                <input type="file" id="file-input" accept="image/*,application/pdf,.txt,.md,.csv,.json,.xml,.html,.css,.js,.ts,.jsx,.tsx,.py,.java,.c,.cpp,.h,.cs,.php,.rb,.go,.rs,.swift,.kt,.sh,.yaml,.yml,.ini,.log,.sql" style="display: none;">
+                <button id="file-upload-btn" aria-label="Upload file">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path fill-rule="evenodd" d="M18.97 3.659a2.25 2.25 0 00-3.182 0l-10.94 10.94a2.751 2.751 0 00-.666 1.488L3.051 21.05a.75.75 0 00.9.9l4.965-1.131a2.751 2.751 0 001.488-.667l10.94-10.939a2.25 2.25 0 000-3.182zM17.548 5.083l1.369 1.369L8.69 16.78l-1.415-.322.04-.04L17.548 5.083zM5.826 17.4l.322 1.414L4.732 19.27l-.364-1.591.04-.04L5.826 17.4z" clip-rule="evenodd" />
+                        <path d="M10.5 6.75a.75.75 0 00-1.5 0v10.5a.75.75 0 001.5 0V6.75z" transform="rotate(-45 10.5 12)"/>
+                     </svg>
+                </button>
+                <button id="voice-input-btn" aria-label="Activate voice input">
+                    <!-- SVG icon will be populated by JS -->
+                </button>
+                <textarea id="user-input" placeholder="Ask Zeyn AI anything..." aria-label="User input" rows="1"></textarea>
+                <button id="send-btn" aria-label="Send message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                </button>
+            </div>
+            <div id="loading-indicator" class="hidden" aria-hidden="true"></div>
+        </footer>
+    </div>
+
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^0.14.0",
+    "pdfjs-dist/build/pdf.min.mjs": "https://esm.sh/pdfjs-dist@4.4.168/build/pdf.min.mjs",
+    "pdfjs-dist/build/pdf.worker.min.mjs": "https://esm.sh/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs",
+    "pdfjs-dist/": "https://esm.sh/pdfjs-dist@^5.2.133/"
+  }
+}
+</script>
+    <script type="module" src="index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
